@@ -23,7 +23,7 @@ on:
         default: v3   
 
 jobs:
-  build:
+  Build:
     runs-on: ubuntu-latest
     steps:
       - name: Build
@@ -31,7 +31,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    needs: build
+    needs: Build
     if: ${{ inputs.dry-run == false }} 
     environment: ${{ inputs.target }}   
     steps:
